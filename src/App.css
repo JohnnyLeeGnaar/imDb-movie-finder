@@ -1,12 +1,11 @@
 @import-normalize;
 
-html {
-  font-family: "helvetica neue";
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   font-size: 14px;
-  font-weight: 200;
 }
 #root {
-  font-family: "helvetica neue";
   min-height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
@@ -14,38 +13,28 @@ html {
 }
 .app {
   background-color: #eeeeee;
-  max-width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  flex-basis: auto;
   min-height: 100vh;
-}
-
-.search-bar {
-  width: 100%;
-  height: 200px;
 }
 
 .search-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 100%;
+  flex: 1;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .search-input-form {
-  padding-top: 3%;
-  width: 70%;
-  height: 150px;
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  height: 70px;
+  padding: 30px 20px;
 }
 .search-series-input {
-  font-family: "helvetica neue";
   color: #333333;
   font-size: 20px;
   font-weight: 600;
-  width: 80%;
-  height: 30%;
+  flex: 1;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   border: solid 0.1em #eeeeee;
@@ -53,23 +42,21 @@ html {
 }
 
 .search-button {
-  width: 15%;
-  height: 33%;
+  width: 100px;
   background-color: #bbbbbb;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   border: solid 0.1em #bbbbbb;
   margin-left: 5px;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .series-wrapper {
-  max-width: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  flex-basis: auto;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .series-list-image {
@@ -85,16 +72,28 @@ html {
 }
 
 .shows {
-  font-family: "helvetica neue";
-  background-color: white;
-  padding: 20px;
-  margin: 0 0 20px 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: column-reverse;
+  font-family: 'Roboto', sans-serif;
   cursor: pointer;
   border-radius: 2.5%;
-  z-index: 5;
+  margin: 10px;
+  width: 320px;
+  height: 480px;
   border: solid 0.1em #eeeeee;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: transform .2s;
+}
+
+.shows:hover {
+  transform: scale(1.05);
+}
+
+.shows-info {
+  padding: 20px;
+  min-height: 120px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .flex-wrapper {
@@ -147,7 +146,6 @@ html {
 }
 
 .main-star-heading {
-  margin-left: 23%;
   color: #1f1f1f !important;
 }
 .labelike-span {
@@ -185,25 +183,24 @@ html {
   margin: 0 0 10px;
   line-height: 2.4;
 }
-.cast {
-  padding: 0 10%;
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 10%;
   background: #eeeeee;
-  /* justify-content: center; */
-  align-items: center;
 }
 .flex-info-wrapper {
   flex: 1;
+  padding-right: 10px;
 }
 .info-container {
   flex: 1;
   max-width: 450px;
   min-width: 320px;
-  margin-left: 15%;
 }
 
 .info-container p {
   padding: 0;
-  margin: 0 0 5px;
 }
 
 .cast-wrapper {
@@ -215,23 +212,34 @@ html {
   border-radius: 50%;
   width: 100px;
   height: 100px;
+  margin: 10px 5px;
 }
 .mainStar-infoSpan {
   line-height: 5px;
+  min-width: 280px;
 }
 
 .main-image-container {
   flex: 1;
-  min-width: 400px;
-  max-width: 450px;
-  max-height: 100%;
-  height: 100%;
-  width: 100%;
+  min-width: 320px;
 }
 .main-list-image {
-  width: 100%;
-  height: 400px;
- 
+  max-width: 100%;
+  height: auto;
+}
+
+.show-genres-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.show-genre {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 20px;
+  background-color: #999999;
+  color: whitesmoke;
+  font-weight: 400;
 }
 
 .main-description-span {
@@ -287,8 +295,7 @@ a:active {
 
 .navbar {
   background: #1f1f1f;
-  justify-content: flex-start;
-  padding: 0 10%;
+  padding: 10px 10%;
 }
 
 footer {
@@ -299,9 +306,4 @@ footer {
   text-align: center;
   vertical-align: middle;
   line-height: 90px;
-}
-
-@media only screen and (max-width: 400px) {
-
-
 }

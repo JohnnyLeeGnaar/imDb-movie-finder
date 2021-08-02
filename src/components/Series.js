@@ -3,29 +3,27 @@ import { searchImdbSeries } from "../utils/api";
 
 import SearchBar from "./SearchBar";
 import SeriesBodyRenderList from "./SeriesBodyRenderList";
-import Loading from "./Loading"
+import Loading from "./Loading";
 
 function Series() {
   const [search, setSearch] = useState(null);
   const [series, setSeries] = useState([]);
 
-  const onChangeToolbarHandler = (searchQuery) => {
+  const onChangeToolbarHandler = searchQuery => {
     setSearch(searchQuery);
   };
 
-  const onClickToolbarHandler = (e) => {
+  const onClickToolbarHandler = e => {
     e.preventDefault();
-    searchImdbSeries(search).then((response) => setSeries(response));
+    searchImdbSeries(search).then(response => setSeries(response));
   };
 
   return series ? (
     <div className="app">
-      <div className="search-bar">
-        <SearchBar
-          onChangeHandler={onChangeToolbarHandler}
-          onClickToolbarHandler={onClickToolbarHandler}
-        ></SearchBar>
-      </div>
+      <SearchBar
+        onChangeHandler={onChangeToolbarHandler}
+        onClickToolbarHandler={onClickToolbarHandler}
+      ></SearchBar>
       <div className="series">
         <SeriesBodyRenderList series={series}></SeriesBodyRenderList>
       </div>

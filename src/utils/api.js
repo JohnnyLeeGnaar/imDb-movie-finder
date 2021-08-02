@@ -1,6 +1,6 @@
 import axios from "axios";
-//k_vllk5bt8 ili k_sgh456ru ili k_ht2lurt5 ili k_53i4vn90
-const API_KEY = "k_53i4vn90";
+//k_vllk5bt8 ili k_sgh456ru ili k_ht2lurt5
+const API_KEY = "k_46g0yj1i";
 /*requestova mogu 100 u danu raditi. 
 Zamijeni API_KEY sa k_vllk5bt8 u slučaju da dođem do limita*/
 
