@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
 import ListOfMainActors from "./ListOfMainActors";
 import { useParams } from "react-router";
+import {Link} from "react-router-dom"
 
-import { IoCaretBackCircleSharp } from "react-icons/fa";
+import { FaArrowCircleLeft } from "react-icons/fa";
 import imDbIcon from "../assets/icons/4373222_imdb_logo_logos_icon.png";
 import filmAfIcon from "../assets/icons/filmAf.png";
 import metacriticIcon from "../assets/icons/metacritic.png";
@@ -20,7 +21,8 @@ const Show = () => {
   return show ? (
     <>
       <div className="flex-wrapper title-rating">
-        <h1 className="show-heading heading-one">{show.title}</h1>
+        <h1 className="show-heading heading-one">
+          {show.title}</h1>
         <div className="ratings-container">
           <span className="labelike-span">
             <img className="icons" src={imDbIcon} alt="imdb-icon"></img>
@@ -84,7 +86,11 @@ const Show = () => {
           <p className="plot-paragraph">{show.plot}</p>
         </div>
       </div>
-      <footer>{`© Made by Marko Robert Vučković`}</footer>
+      
+      <footer>
+      <nav><span className="back-button-span"><Link to="/"><FaArrowCircleLeft size={40}/></Link> </span></nav>
+      <p>{`© Made by Marko Robert Vučković`}</p>
+      </footer>
     </>
   ) : (
     <Loading />
