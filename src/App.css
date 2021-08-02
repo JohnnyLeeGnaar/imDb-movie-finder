@@ -68,8 +68,16 @@ html {
   display: flex;
   flex-direction: row;
   flex-basis: auto;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
+}
+
+.series-list-image {
+  max-width: 400px;
+  width: 100%;
+  max-height: 450px;
+  height: 100%;
+  flex: 1;
 }
 
 .back-button-span{
@@ -91,8 +99,9 @@ html {
 
 .flex-wrapper {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   align-items: center;
+  overflow: hidden;
 }
 
 .cast {
@@ -107,11 +116,13 @@ html {
   background: #444444;
   justify-content: space-between;
 }
-.ratings-container h2 {
-  display: inline;
+.ratings-container {
+  display: flex;
+  flex-flow: row wrap
 }
 
 .icons {
+  padding-right: 5%;
   width: 24px;
   height: 24px;
 }
@@ -146,6 +157,7 @@ html {
   font-size: 1em;
   font-weight: 200;
   color: whitesmoke;
+  padding-right: 7px;
 }
 
 .show-type {
@@ -155,7 +167,6 @@ html {
 }
 
 .show-plot {
-  margin: 0 10%;
   padding: 0 10%;
   background: #1f1f1f;
   justify-content: flex-start;
@@ -177,7 +188,7 @@ html {
 .cast {
   padding: 0 10%;
   background: #eeeeee;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 }
 .flex-info-wrapper {
@@ -209,25 +220,28 @@ html {
   line-height: 5px;
 }
 
-.series-image-container {
+.main-image-container {
   flex: 1;
   min-width: 400px;
   max-width: 450px;
-  margin-left: 15%;
+  max-height: 100%;
+  height: 100%;
+  width: 100%;
 }
-.series-list-image {
-  max-width: 450px;
+.main-list-image {
+  width: 100%;
   height: 400px;
+ 
 }
 
-.series-description-span {
+.main-description-span {
   display: inline-block;
   margin-top: 5%;
   font-size: 20px;
+  font-style: italic;
   font-weight: 400;
   color: #222222;
   line-height: 150%;
-  border-bottom: solid 0.1em #666666;
 }
 
 .search-button:hover {
@@ -271,9 +285,13 @@ a:active {
   color: #cdfeaa;
 }
 
+.navbar {
+  background: #1f1f1f;
+  justify-content: flex-start;
+  padding: 0 10%;
+}
+
 footer {
-  display: flex;
-  justify-content: space-evenly;
   width: 100%;
   height: 100px;
   background: black;
@@ -281,4 +299,9 @@ footer {
   text-align: center;
   vertical-align: middle;
   line-height: 90px;
+}
+
+@media only screen and (max-width: 400px) {
+
+
 }

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
 import ListOfMainActors from "./ListOfMainActors";
 import { useParams } from "react-router";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
-import { FaArrowCircleLeft } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import imDbIcon from "../assets/icons/4373222_imdb_logo_logos_icon.png";
 import filmAfIcon from "../assets/icons/filmAf.png";
 import metacriticIcon from "../assets/icons/metacritic.png";
@@ -20,26 +20,31 @@ const Show = () => {
   }, [id]);
   return show ? (
     <>
+      <div className="flex-wrapper navbar">
+        <nav>
+          <span className="back-button-span">
+            <Link to="/">
+              <FaArrowLeft size={50} color="white"/>
+            </Link>{" "}
+          </span>
+        </nav>
+      </div>
       <div className="flex-wrapper title-rating">
-        <h1 className="show-heading heading-one">
-          {show.title}</h1>
+        <h1 className="show-heading heading-one">{show.title}</h1>
         <div className="ratings-container">
           <span className="labelike-span">
             <img className="icons" src={imDbIcon} alt="imdb-icon"></img>
-            {show.ratings.imDb}/10
-            <br />
+            {show.ratings.imDb}/10 {" "}
           </span>
 
           <span className="labelike-span">
             <img className="icons" src={filmAfIcon} alt="imdb-icon"></img>
-            {show.ratings.metacritic}/100
-            <br />
+            {show.ratings.metacritic}/100 {" "}
           </span>
 
           <span className="labelike-span">
             <img className="icons" src={metacriticIcon} alt="imdb-icon"></img>
-            {show.ratings.rottenTomatoes}/100
-            <br />
+            {show.ratings.rottenTomatoes}/100 {" "}
           </span>
 
           <span className="labelike-span">
@@ -48,8 +53,7 @@ const Show = () => {
               src={rottentomatoesIcon}
               alt="imdb-icon"
             ></img>
-            {show.ratings.filmAffinity}/10
-            <br />
+            {show.ratings.filmAffinity}/10 {" "}
           </span>
         </div>
       </div>
@@ -66,9 +70,9 @@ const Show = () => {
           actorList={show.actorList}
         ></ListOfMainActors>
 
-        <div className="series-image-container">
+        <div className="main-image-container">
           <img
-            className="series-list-image"
+            className="main-list-image"
             src={show.image}
             alt="poster of the TV show"
           ></img>
@@ -76,7 +80,7 @@ const Show = () => {
             <span className="tagline-span">{show.genres}</span>
           </div>
           <div>
-            <span className="series-description-span">{show.tagline}</span>
+            <span className="main-description-span">{show.tagline}</span>
           </div>
         </div>
       </div>
@@ -86,10 +90,9 @@ const Show = () => {
           <p className="plot-paragraph">{show.plot}</p>
         </div>
       </div>
-      
+
       <footer>
-      <nav><span className="back-button-span"><Link to="/"><FaArrowCircleLeft size={40}/></Link> </span></nav>
-      <p>{`© Made by Marko Robert Vučković`}</p>
+        {`© Made by Marko Robert Vučković`}
       </footer>
     </>
   ) : (

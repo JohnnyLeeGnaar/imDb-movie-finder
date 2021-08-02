@@ -18,7 +18,7 @@ function Series() {
     searchImdbSeries(search).then((response) => setSeries(response));
   };
 
-  return (
+  return series ? (
     <div className="app">
       <div className="search-bar">
         <SearchBar
@@ -30,7 +30,7 @@ function Series() {
         <SeriesBodyRenderList series={series}></SeriesBodyRenderList>
       </div>
     </div>
-  );
+  ) : <h1>API call limit of 100 requests has been reached for today...</h1>
 }
 
 export default Series;
