@@ -1,62 +1,41 @@
 @import-normalize;
 
 body {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
   font-size: 14px;
 }
-#root {
-  min-height: 100vh;
-  max-width: 1200px;
-  margin: 0 auto;
+.navbar {
   background-color: #1f1f1f;
 }
-.app {
-  background-color: #eeeeee;
-  min-height: 100vh;
-}
 
-.search-wrapper {
+.search-wrapper-flex {
   display: flex;
-  flex: 1;
   justify-content: center;
-  overflow: hidden;
-}
-
-.search-input-form {
-  display: flex;
-  width: 100%;
-  max-width: 700px;
-  height: 70px;
-  padding: 30px 20px;
 }
 .search-series-input {
   color: #333333;
-  font-size: 20px;
+  font-size: 1.6em;
   font-weight: 600;
-  flex: 1;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   border: solid 0.1em #eeeeee;
   text-align: center;
 }
 
-.search-button {
-  width: 100px;
-  background-color: #bbbbbb;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  border: solid 0.1em #bbbbbb;
-  margin-left: 5px;
-  font-size: 20px;
-  cursor: pointer;
+.initial {
+  padding-top: 40%;
+}
+.populated {
+  padding: 2% 0 2% 0;
 }
 
-.series-wrapper {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.search-button {
+  height: 100%;
+  border-radius: 10px;
+  border: solid 0.1em #eeeeee;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  font-size: 1.4em;
 }
 
 .series-list-image {
@@ -67,14 +46,14 @@ body {
   flex: 1;
 }
 
-.back-button-span{
+.back-button-span {
   cursor: pointer;
 }
 
 .shows {
   display: flex;
   flex-direction: column-reverse;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   cursor: pointer;
   border-radius: 2.5%;
   margin: 10px;
@@ -82,7 +61,7 @@ body {
   height: 480px;
   border: solid 0.1em #eeeeee;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 .shows:hover {
@@ -97,6 +76,7 @@ body {
 }
 
 .flex-wrapper {
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -117,7 +97,7 @@ body {
 }
 .ratings-container {
   display: flex;
-  flex-flow: row wrap
+  flex-flow: row wrap;
 }
 
 .icons {
@@ -132,30 +112,14 @@ body {
   justify-content: space-between;
 }
 
-.show-heading {
-  color: whitesmoke;
-}
-.heading-one {
-  font-size: 3em !important;
-  font-weight: 400;
-}
-
-.heading-two {
-  font-size: 1.5em !important;
-  font-weight: 400;
-}
-
-.main-star-heading {
-  color: #1f1f1f !important;
-}
-.labelike-span {
+.ratings-span {
   margin-bottom: 5px;
   display: flex;
   align-items: center;
   font-size: 1em;
   font-weight: 200;
   color: whitesmoke;
-  padding-right: 7px;
+  padding-right: 15px;
 }
 
 .show-type {
@@ -173,7 +137,6 @@ body {
 .plot-heading {
   color: whitesmoke;
   font-size: 1.9em;
-  font-weight: bold;
 }
 .plot-paragraph {
   color: whitesmoke;
@@ -239,7 +202,6 @@ body {
   border-radius: 20px;
   background-color: #999999;
   color: whitesmoke;
-  font-weight: 400;
 }
 
 .main-description-span {
@@ -247,23 +209,8 @@ body {
   margin-top: 5%;
   font-size: 20px;
   font-style: italic;
-  font-weight: 400;
   color: #222222;
   line-height: 150%;
-}
-
-.search-button:hover {
-  background-color: #719ece;
-}
-
-.search-button:active {
-  box-shadow: inset -2px -2px 3px #719ece, inset 2px 2px 3px #bbbbbb;
-}
-
-input:focus {
-  outline: none !important;
-  border-color: #719ece;
-  box-shadow: 0 0 10px #719ece;
 }
 
 p {
@@ -287,15 +234,9 @@ a:focus {
   background: #bae498;
 }
 
-
 a:active {
   background: #265301;
   color: #cdfeaa;
-}
-
-.navbar {
-  background: #1f1f1f;
-  padding: 10px 10%;
 }
 
 footer {
@@ -306,4 +247,27 @@ footer {
   text-align: center;
   vertical-align: middle;
   line-height: 90px;
+}
+
+@media screen and (max-width: 575px) {
+  .search-button {
+    width: 100%;
+    margin-top: 5%;
+  }
+  .search-series-input {
+    font-size: 1em;
+  }
+  .initial {
+    padding-top: 50%;
+  }
+}
+
+@media screen and (min-width: 560px) and (max-width: 1000px) {
+  .search-button {
+    font-size: 1.5em;
+    width: 150px;
+  }
+  .search-series-input {
+    font-size: 1.7em;
+  }
 }

@@ -1,7 +1,9 @@
 import React from "react";
+import SecondHeadingText from "../styled-components/SecondHeadingText.js";
 
-const ListOfMainActors = props => {
+const ListOfMainActors = (props) => {
   const { actorList } = props;
+  const Headingtheme = { inputColor: "#1f1f1f" };
 
   function filterById(actor, i) {
     if (i < 8) {
@@ -11,10 +13,10 @@ const ListOfMainActors = props => {
 
   return (
     <div className="flex-info-wrapper">
-      <h2 className="main-star-heading">Top cast: </h2>
+      <SecondHeadingText theme={Headingtheme}>Top cast: </SecondHeadingText>
       {actorList
         .filter((actor, i) => filterById(actor, i))
-        .map(actor => (
+        .map((actor) => (
           <div className="info-container" key={actor.id}>
             <div className="flex-wrapper cast">
               <div
@@ -22,7 +24,7 @@ const ListOfMainActors = props => {
                 style={{
                   backgroundImage: `url(${actor.image})`,
                   backgroundSize: "cover",
-                  backgroundPosition: "top center"
+                  backgroundPosition: "top center",
                 }}
               />
               <span className="mainStar-infoSpan">
